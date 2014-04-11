@@ -93,39 +93,7 @@
 		<div class="playlist right">
 			<p class="name">Girl</p>
 			<p class="author">Pharrell Williams</p>
-			<ul class="list">
-				<li class="item border-bottom">
-					<span>Otra cancion</span>
-					<span class="right">
-						<a class="action icon-add gray"></a>
-						<a class="action icon-love gray"></a>
-						<a class="action icon-share gray"></a>
-					</span>
-				</li>
-				<li class="item border-bottom">
-					<span>Otra cancion</span>
-					<span class="right">
-						<a class="action icon-add gray"></a>
-						<a class="action icon-love gray"></a>
-						<a class="action icon-share gray"></a>
-					</span>
-				</li>
-				<li class="item border-bottom">
-					<span>Otra cancion</span>
-					<span class="right">
-						<a class="action icon-add gray"></a>
-						<a class="action icon-love gray"></a>
-						<a class="action icon-share gray"></a>
-					</span>
-				</li>
-				<li class="item border-bottom">
-					<span>Otra cancion</span>
-					<span class="right">
-						<a class="action icon-add gray"></a>
-						<a class="action icon-love gray"></a>
-						<a class="action icon-share gray"></a>
-					</span>
-				</li>
+			<ul id="list" class="list">
 				<li class="item border-bottom">
 					<span>Otra cancion</span>
 					<span class="right">
@@ -238,6 +206,15 @@
 			<p class="author">Pharrell Williams</p>
 		</article>
 	</section>
+
+	<script id="song-template" type="text/x-handlebars-template">
+		<span>{{name}} - {{author}}</span>
+		<span class="right">
+			<a class="action icon-add gray"></a>
+			<a class="action icon-love gray"></a>
+			<a class="action icon-share gray"></a>
+		</span>
+	</script>
 
 	<script src="lib/underscore.js"></script>
 	<script src="lib/jquery-1.11.0.js"></script>

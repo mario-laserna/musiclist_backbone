@@ -17,6 +17,10 @@ Sfotipy.SongView = Backbone.View.extend({
 
 	template: Handlebars.compile($("#song-template").html()),
 	
+	initialize: function(){
+		this.listenTo(this.model, "change", this.render, this);
+	},
+
 	render: function(){
 		var song = this.model;
 		var name = song.get("name");
@@ -30,5 +34,28 @@ Sfotipy.SongView = Backbone.View.extend({
 		alert(this.model.get("name"));
 	}
 });
+
+Sfotipy.Router = Backbone.Router.extend({
+	routes:{
+		"": "index",
+		"album/:name": "album",
+		"profile/:username" : "profile"
+	},
+
+	index: function(){
+		console.log("estoy en el index");
+	},
+
+	album: function(name){
+		console.log("album: " + name);
+	},
+
+	profile: function(username){
+		console.log("perfil: " + username);
+	}
+});
+
+Sfotipy.app = new Sfotipy.Router();
+Backbone.history.start();
 
 window.Sfotipy = Sfotipy;
